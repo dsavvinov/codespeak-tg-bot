@@ -59,7 +59,8 @@
         "commit_message": "Implement HelloWorld Django app with Tailwind CSS",
         "methods_to_test_raw": "methods_to_test_raw.json",
         "methods_to_test": "methods_to_test.json",
-        "test_reports": "test_reports.txt"
+        "test_reports": "test_reports.txt",
+        "spec_diff": "--- +++ @@ -1,14 +1 @@-HelloWorld is a simple web app that displays a greeting.\n-\n-# Tech Stack\n-\n-- Django\n-- Tailwind CSS\n-\n-# Routing\n-\n-The app responds to only one route (/).\n-\n-# User Interface\n-\n-A nice looking HTML page with the message: \"Hello from CodeSpeak!\"+We're roking on a Telegram Bot. For the first iteration, let's start with a simple \"Hello, Codespeak + Telegram\" echo-bot that responds with this message to all DMs."
     },
     "phase_manager": {
         "history": [
@@ -110,6 +111,10 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"1c3cab7e-7564-4f4e-b827-187726b5c408\",\"kind\":\"build\"},\"phase_id\":\"Init\",\"additional_id\":null}",
                 "timestamp": "2025-10-07T12:45:58.369258+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"1c3cab7e-7564-4f4e-b827-187726b5c408\",\"kind\":\"build\"},\"phase_id\":\"ProcessSpec\",\"additional_id\":null}",
+                "timestamp": "2025-10-07T12:45:58.404995+00:00"
             }
         ]
     }
