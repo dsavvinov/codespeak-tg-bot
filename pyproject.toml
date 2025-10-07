@@ -1,0 +1,19 @@
+[project]
+name = "codespeak-tg-bot"
+version = "0.1.0"
+description = "CodeSpeak Telegram Bot"
+requires-python = ">=3.11"
+dependencies = [
+    "python-telegram-bot[httpx]>=21.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+start = "main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []
