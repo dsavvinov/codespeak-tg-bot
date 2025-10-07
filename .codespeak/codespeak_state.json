@@ -44,16 +44,14 @@
         "spec": "spec.processed.md",
         "criteria": {
             "console_application": false,
-            "has_django": true,
-            "has_external_apis": false,
+            "has_django": false,
             "has_javascript": false,
             "has_node_js": false,
-            "has_python": true,
+            "has_python": false,
             "has_server": true,
-            "has_social_logins": false,
             "has_sql_database": false,
-            "server": false,
-            "web_application": true
+            "server": true,
+            "web_application": false
         },
         "external_apis": "external_apis.json",
         "commit_message": "Implement HelloWorld Django app with Tailwind CSS",
@@ -115,6 +113,10 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"1c3cab7e-7564-4f4e-b827-187726b5c408\",\"kind\":\"build\"},\"phase_id\":\"ProcessSpec\",\"additional_id\":null}",
                 "timestamp": "2025-10-07T12:45:58.404995+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"1c3cab7e-7564-4f4e-b827-187726b5c408\",\"kind\":\"build\"},\"phase_id\":\"EvaluateCriteria\",\"additional_id\":null}",
+                "timestamp": "2025-10-07T12:46:10.450433+00:00"
             }
         ]
     }
