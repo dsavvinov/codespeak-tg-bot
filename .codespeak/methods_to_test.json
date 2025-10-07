@@ -1,0 +1,11 @@
+{
+    "django_app/views.py": [
+        {
+            "method": {
+                "enclosing_classes": [],
+                "method_name": "hello_world"
+            },
+            "kind": "endpoint_tests"
+        }
+    ]
+}
