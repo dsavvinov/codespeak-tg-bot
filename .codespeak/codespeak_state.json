@@ -56,7 +56,9 @@
             "web_application": true
         },
         "external_apis": "external_apis.json",
-        "commit_message": "Implement HelloWorld Django app with Tailwind CSS"
+        "commit_message": "Implement HelloWorld Django app with Tailwind CSS",
+        "methods_to_test_raw": "methods_to_test_raw.json",
+        "methods_to_test": "methods_to_test.json"
     },
     "phase_manager": {
         "history": [
@@ -91,6 +93,10 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"b917b415-dff7-4427-81cd-d1475fd095a0\",\"kind\":\"build\"},\"phase_id\":\"FeedbackLoopWithClaudeCode\",\"additional_id\":null}",
                 "timestamp": "2025-10-07T12:35:14.331105+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"b917b415-dff7-4427-81cd-d1475fd095a0\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeAndPlanTests\",\"additional_id\":null}",
+                "timestamp": "2025-10-07T12:35:22.591088+00:00"
             }
         ]
     }
