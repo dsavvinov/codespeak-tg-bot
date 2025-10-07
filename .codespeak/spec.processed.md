@@ -1,0 +1,1 @@
+We're writing a Telegram bot. As initial step, let's create a "Hello, CodeSpeak + Telegram" bot that responds with this phrase for each message

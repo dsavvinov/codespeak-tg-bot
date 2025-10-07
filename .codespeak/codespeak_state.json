@@ -1,0 +1,110 @@
+{
+    "meta": {
+        "schema": {
+            "spec": {
+                "type": "file",
+                "relative_path": "spec.processed.md",
+                "format": "text",
+                "by_phase": "ProcessSpec"
+            },
+            "external_apis": {
+                "type": "file",
+                "relative_path": "external_apis.json",
+                "format": "json",
+                "by_phase": "AnalyzeExternalApis"
+            },
+            "methods_to_test": {
+                "type": "file",
+                "relative_path": "methods_to_test.json",
+                "format": "json",
+                "by_phase": "AnalyzeAndPlanTests"
+            },
+            "methods_to_test_raw": {
+                "type": "file",
+                "relative_path": "methods_to_test_raw.json",
+                "format": "json",
+                "by_phase": "AnalyzeAndPlanTests"
+            },
+            "test_reports": {
+                "type": "file",
+                "relative_path": "test_reports.txt",
+                "format": "text",
+                "by_phase": "GenerateAndRunTests"
+            },
+            "sha_to_checkpoint": {
+                "type": "file",
+                "relative_path": "sha_to_checkpoint.json",
+                "format": "json"
+            }
+        },
+        "version": "0.2.0"
+    },
+    "phases_state": {
+        "spec_file": "spec/main.cs.md",
+        "spec": "spec.processed.md",
+        "criteria": {
+            "console_application": false,
+            "has_django": false,
+            "has_external_apis": true,
+            "has_javascript": false,
+            "has_node_js": false,
+            "has_python": false,
+            "has_server": true,
+            "has_social_logins": false,
+            "has_sql_database": false,
+            "server": true,
+            "web_application": false
+        },
+        "external_apis": "external_apis.json",
+        "commit_message": "Add initial Telegram bot implementation",
+        "methods_to_test": "methods_to_test.json"
+    },
+    "phase_manager": {
+        "history": [
+            {
+                "checkpoint": "{\"run\":{\"id\":\"718878b8-003a-4393-923d-ff70882557ee\",\"kind\":\"build\"},\"phase_id\":\"Init\",\"additional_id\":null}",
+                "timestamp": "2025-10-07T13:13:28.416844+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"718878b8-003a-4393-923d-ff70882557ee\",\"kind\":\"build\"},\"phase_id\":\"ProcessSpec\",\"additional_id\":null}",
+                "timestamp": "2025-10-07T13:13:28.428929+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"718878b8-003a-4393-923d-ff70882557ee\",\"kind\":\"build\"},\"phase_id\":\"EvaluateCriteria\",\"additional_id\":null}",
+                "timestamp": "2025-10-07T13:13:40.615193+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"718878b8-003a-4393-923d-ff70882557ee\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeExternalApis\",\"additional_id\":null}",
+                "timestamp": "2025-10-07T13:13:56.102238+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"718878b8-003a-4393-923d-ff70882557ee\",\"kind\":\"build\"},\"phase_id\":\"CheckExternalApisConfigurationFile\",\"additional_id\":null}",
+                "timestamp": "2025-10-07T13:13:56.118625+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"718878b8-003a-4393-923d-ff70882557ee\",\"kind\":\"build\"},\"phase_id\":\"SetupProject\",\"additional_id\":null}",
+                "timestamp": "2025-10-07T13:13:56.133193+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"718878b8-003a-4393-923d-ff70882557ee\",\"kind\":\"build\"},\"phase_id\":\"ImplementSpecWithClaudeCode\",\"additional_id\":null}",
+                "timestamp": "2025-10-07T13:15:29.134036+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"718878b8-003a-4393-923d-ff70882557ee\",\"kind\":\"build\"},\"phase_id\":\"FeedbackLoopWithClaudeCode\",\"additional_id\":null}",
+                "timestamp": "2025-10-07T13:15:29.157157+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"718878b8-003a-4393-923d-ff70882557ee\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeAndPlanTests\",\"additional_id\":null}",
+                "timestamp": "2025-10-07T13:15:29.172443+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"718878b8-003a-4393-923d-ff70882557ee\",\"kind\":\"build\"},\"phase_id\":\"GenerateAndRunTests\",\"additional_id\":null}",
+                "timestamp": "2025-10-07T13:15:29.187806+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"718878b8-003a-4393-923d-ff70882557ee\",\"kind\":\"build\"},\"phase_id\":\"Done\",\"additional_id\":null}",
+                "timestamp": "2025-10-07T13:15:29.201726+00:00"
+            }
+        ]
+    }
+}
