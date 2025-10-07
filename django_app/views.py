@@ -1,6 +1,2 @@
-from django.shortcuts import render
-
-
-def hello_world(request):
-    """Display the HelloWorld greeting page."""
-    return render(request, 'django_app/hello_world.html')
+# This Django app is now used for running a Telegram bot
+# Views are not needed for bot functionality

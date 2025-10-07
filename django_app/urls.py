@@ -1,8 +1,10 @@
+# This Django app is now used for running a Telegram bot
+# URL patterns are not needed for bot functionality
+
 from django.urls import path
-from . import views
 
 app_name = 'django_app'
 
 urlpatterns = [
-    path('', views.hello_world, name='hello_world'),
+    # No URL patterns needed for Telegram bot
 ]

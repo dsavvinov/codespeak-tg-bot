@@ -1,58 +1,46 @@
 import pytest
-from django.test import TestCase, Client
-from django.urls import reverse
+from django.test import TestCase
+from unittest.mock import patch, MagicMock
+import os
+from config import get_telegram_bot_token, _read_config_parameter
 
 
-class HelloWorldEndpointTest(TestCase):
-    """Test cases for the hello_world endpoint."""
-
-    def setUp(self):
-        """Set up test client."""
-        self.client = Client()
+class ConfigTest(TestCase):
+    """Test cases for configuration functionality."""
 
     @pytest.mark.timeout(30)
-    def test_hello_world_endpoint_returns_200(self):
+    def test_read_config_parameter_from_env(self):
         """
-        Test kind: endpoint_tests
-        Original method: hello_world
-
-        Test that the hello_world endpoint returns HTTP 200 status code.
+        Test that _read_config_parameter reads from environment variables.
         """
-        response = self.client.get(reverse('django_app:hello_world'))
-        self.assertEqual(response.status_code, 200)
+        with patch.dict(os.environ, {'TEST_PARAM': 'test_value'}):
+            result = _read_config_parameter('TEST_PARAM')
+            self.assertEqual(result, 'test_value')
 
     @pytest.mark.timeout(30)
-    def test_hello_world_endpoint_uses_correct_template(self):
+    def test_read_config_parameter_case_insensitive(self):
         """
-        Test kind: endpoint_tests
-        Original method: hello_world
-
-        Test that the hello_world endpoint uses the correct template.
+        Test that _read_config_parameter is case insensitive.
         """
-        response = self.client.get(reverse('django_app:hello_world'))
-        self.assertTemplateUsed(response, 'django_app/hello_world.html')
+        with patch.dict(os.environ, {'TEST_PARAM': 'test_value'}):
+            result = _read_config_parameter('test_param')
+            self.assertEqual(result, 'test_value')
 
     @pytest.mark.timeout(30)
-    def test_hello_world_endpoint_contains_expected_content(self):
+    def test_get_telegram_bot_token_raises_error_when_missing(self):
         """
-        Test kind: endpoint_tests
-        Original method: hello_world
-
-        Test that the hello_world endpoint returns expected content in the response.
+        Test that get_telegram_bot_token raises ValueError when token is missing.
         """
-        response = self.client.get(reverse('django_app:hello_world'))
-        self.assertContains(response, "Hello from CodeSpeak!")
-        self.assertContains(response, "Welcome to your Django web application")
-        self.assertContains(response, "Ready to Go!")
+        with patch('config._read_config_parameter', return_value=None):
+            with self.assertRaises(ValueError) as context:
+                get_telegram_bot_token()
+            self.assertIn("TELEGRAM_BOT_TOKEN is required", str(context.exception))
 
     @pytest.mark.timeout(30)
-    def test_hello_world_endpoint_root_path(self):
+    def test_get_telegram_bot_token_returns_token_when_available(self):
         """
-        Test kind: endpoint_tests
-        Original method: hello_world
-
-        Test that the hello_world endpoint is accessible via root path.
+        Test that get_telegram_bot_token returns token when available.
         """
-        response = self.client.get('/')
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Hello from CodeSpeak!")
+        with patch('config._read_config_parameter', return_value='test_token'):
+            result = get_telegram_bot_token()
+            self.assertEqual(result, 'test_token')
